@@ -2,6 +2,8 @@
 
 Hotnss is a simple demo I created while developing a talk on Ember CLI for the [SEM.js](http://www.meetup.com/SEM-JS/) Meetup group.
 
+## Demo [here](http://tzellman.github.io/hotnss/)
+
 The slides for the talk are located on [slides.com](http://slides.com/tzellman/ember-cli-semjs/).
 
 ![Hotnss](http://i.imgur.com/7zUBQF3.png)
