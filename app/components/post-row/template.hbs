@@ -1,0 +1,12 @@
+<button type="button" class="btn btn-{{if hasPositiveScore 'success' 'danger'}}">
+    <span>{{score}}</span>
+</button>
+<button {{action "upvote"}} type="button" class="btn btn-{{if isUpvote 'success' 'default'}}">
+    <span class="glyphicon glyphicon-arrow-up"></span>
+</button>
+<button {{action "downvote"}} type="button" class="btn btn-{{if isDownvote 'danger' 'default'}}">
+    <span class="glyphicon glyphicon-arrow-down"></span>
+</button>
+<span>{{#link-to "post" post.id}}{{post.title}}{{/link-to}}</span>
+<small>{{post.user.username}}</small>
+<small>{{from-now post.created}}</small>

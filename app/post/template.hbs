@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{#if model.link}}
+                <a href="{{model.link}}" target="_blank">{{model.title}}</a>
+            {{else}}
+                {{model.title}}
+            {{/if}}
+        </h3>
+        <small>posted by {{model.user.username}}</small>
+        <small>{{from-now model.created}}</small>
+    </div>
+    {{#if model.content}}
+        <div class="panel-body">
+            {{model.content}}
+        </div>
+    {{/if}}
+</div>
