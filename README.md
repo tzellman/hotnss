@@ -1,7 +1,10 @@
 # Hotnss
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Hotnss is a simple demo I created while developing a talk on Ember CLI for the [SEM.js](http://www.meetup.com/SEM-JS/) Meetup group.
+
+The slides for the talk are located on [slides.com](http://slides.com/tzellman/ember-cli-semjs/).
+
+![Hotnss](http://i.imgur.com/7zUBQF3.png)
 
 ## Prerequisites
 
@@ -15,10 +18,9 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+* `git clone git@github.com:tzellman/hotnss.git` this repository
+* `cd hotnss`
 * `npm install`
-* `bower install`
 
 ## Running / Development
 
