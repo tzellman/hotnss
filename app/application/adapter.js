@@ -1,7 +1,15 @@
 import DS from 'ember-data';
+import config from '../config/environment';
 
-export default DS.RESTAdapter.extend({
-    namespace: 'api',
+var Adapter;
 
-    shouldReloadAll: () => true
-});
+if (config.environment === 'production') {
+    Adapter = DS.FixtureAdapter.extend({});
+} else {
+    Adapter = DS.RESTAdapter.extend({
+        namespace      : 'api',
+        shouldReloadAll: () => true
+    });
+}
+
+export default Adapter;

@@ -1,6 +1,7 @@
 import DS from 'ember-data';
+import config from '../config/environment';
 
-export default DS.Model.extend({
+var Post = DS.Model.extend({
     title    : DS.attr('string'),
     content  : DS.attr('string'),
     link     : DS.attr('string'),
@@ -11,3 +12,11 @@ export default DS.Model.extend({
     tags     : DS.attr('object'),
     user     : DS.belongsTo('user', {async: true})
 });
+
+if (config.environment === 'production') {
+    Post.reopenClass({
+        FIXTURES: config.FIXTURES.posts
+    });
+}
+
+export default Post;
