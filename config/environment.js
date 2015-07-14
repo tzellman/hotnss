@@ -42,6 +42,8 @@ module.exports = function (environment) {
 
     if (environment === 'production') {
 
+        ENV.baseURL = '/' + ENV.modulePrefix + '/';
+
         // a bit counter-intuitive for now, but I will use a FixtureAdapter with the following fixtures
         // for a production build, since I won't have mock servers
 
