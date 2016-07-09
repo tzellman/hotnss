@@ -1,5 +1,7 @@
-<ul class="list-group">
-    {{#each model as |post|}}
-        {{post-row post=post classNames="list-group-item" tagName="li"}}
-    {{/each}}
-</ul>
+{{#paper-content class="posts"}}
+    <div class="layout-column">
+        {{#each model as |post|}}
+            {{post-row post=post classNames="post-row layout-row"}}
+        {{/each}}
+    </div>
+{{/paper-content}}

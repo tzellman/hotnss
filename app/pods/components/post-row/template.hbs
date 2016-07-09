@@ -1,12 +1,7 @@
-<button type="button" class="btn btn-{{if hasPositiveScore 'success' 'danger'}}">
-    <span>{{score}}</span>
-</button>
-<button {{action "upvote"}} type="button" class="btn btn-{{if isUpvote 'success' 'default'}}">
-    <span class="glyphicon glyphicon-arrow-up"></span>
-</button>
-<button {{action "downvote"}} type="button" class="btn btn-{{if isDownvote 'danger' 'default'}}">
-    <span class="glyphicon glyphicon-arrow-down"></span>
-</button>
+{{#paper-button iconButton=true raised=true primary=hasPositiveScore warn=hasNegativeScore}}{{score}}{{/paper-button}}
+{{#paper-button iconButton=true onClick=(action "upvote") primary=isUpvote}}{{paper-icon "thumb-up"}}{{/paper-button}}
+{{#paper-button iconButton=true onClick=(action "downvote") warn=isDownvote}}{{paper-icon "thumb-down"}}{{/paper-button}}
+<span>{{#link-to "post" post.id}}<img src="{{post.icon}}">{{/link-to}}</span>
 <span>{{#link-to "post" post.id}}{{post.title}}{{/link-to}}</span>
 <small>{{post.user.username}}</small>
 <small>{{moment-from-now post.created interval=60000}}</small>

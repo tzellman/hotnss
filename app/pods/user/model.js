@@ -1,12 +1,13 @@
 import DS from "ember-data";
 import config from "hotnss/config/environment";
+const {attr, Model} = DS;
 
-var User = DS.Model.extend({
-    username: DS.attr('string'),
-    email: DS.attr('string'),
-    displayName: DS.attr('string'),
-    location: DS.attr('string'),
-    bio: DS.attr('string')
+var User = Model.extend({
+    username: attr('string'),
+    email: attr('string'),
+    displayName: attr('string'),
+    location: attr('string'),
+    bio: attr('string')
 });
 
 if (config.environment === 'production') {

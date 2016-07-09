@@ -1,13 +1,36 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            {{#link-to "index" classNames="navbar-brand" title="Hotnss"}}
-                <img src="assets/images/logo.png" alt="Hotnss">
-            {{/link-to}}
-        </div>
-    </div>
-</nav>
+{{#paper-sidenav-container class="site-nav-container"}}
+    {{#paper-sidenav class="md-whiteframe-z2 site-sidenav" lockedOpen="blah"
+    open=isSidenavOpen onToggle=(action (mut isSidenavOpen)) closeOnClick=false}}
+        {{#paper-toolbar class="site-content-toolbar layout-align-center-center" tall=false}}
+            <div class="logo layout-row layout-align-center-center">
+                {{#link-to "index"}}
+                    <img src="assets/images/logo.png" height="30"/>
+                    <div class="product-name">Hotnss</div>
+                {{/link-to}}
+            </div>
+        {{/paper-toolbar}}
+    {{/paper-sidenav}}
 
-<div class="container">
-    {{outlet}}
-</div>
+    <div class="flex layout-column page-overlay flex-grow" tabindex="-1" role="main">
+
+        {{#paper-toolbar class="md-whiteframe-z2 page-main-toolbar" as |toolbar|}}
+            {{#toolbar.tools}}
+                {{#paper-button iconButton=true}}
+                    {{paper-icon "menu"}}
+                {{/paper-button}}
+                {{#link-to "index"}}
+                    <img src="assets/images/logo.png" height="30"/>
+                {{/link-to}}
+
+                <span class="flex"></span>
+                {{#paper-button iconButton=true}}
+                    {{paper-icon "exit_to_app"}}
+                {{/paper-button}}
+            {{/toolbar.tools}}
+        {{/paper-toolbar}}
+
+        {{#paper-content flex=true layout-padding=true class="doc-content"}}
+            {{liquid-outlet}}
+        {{/paper-content}}
+    </div>
+{{/paper-sidenav-container}}

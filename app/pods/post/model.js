@@ -1,16 +1,19 @@
 import DS from "ember-data";
 import config from "hotnss/config/environment";
 
-var Post = DS.Model.extend({
-    title: DS.attr('string'),
-    content: DS.attr('string'),
-    link: DS.attr('string'),
-    created: DS.attr('date'),
-    updated: DS.attr('date'),
-    upvotes: DS.attr('number'),
-    downvotes: DS.attr('number'),
-    tags: DS.attr('object'),
-    user: DS.belongsTo('user', {async: true})
+const {attr, Model, belongsTo} = DS;
+
+var Post = Model.extend({
+    title: attr('string'),
+    content: attr('string'),
+    link: attr('string'),
+    created: attr('date'),
+    updated: attr('date'),
+    upvotes: attr('number'),
+    downvotes: attr('number'),
+    tags: attr('object'),
+    user: belongsTo('user', {async: true}),
+    icon: attr('string')
 });
 
 if (config.environment === 'production') {

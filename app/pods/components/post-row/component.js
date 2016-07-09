@@ -11,6 +11,8 @@ export default Ember.Component.extend({
         return this.get('score') > 0;
     }),
 
+    hasNegativeScore: Ember.computed.not('hasPositiveScore'),
+
     isUpvote: Ember.computed('voteStatus', function () {
         return (this.get('voteStatus') || 0) > 0;
     }),
@@ -22,7 +24,7 @@ export default Ember.Component.extend({
 
         // NOTE: voteStatus is not a long term solution - here as a stub
 
-        upvote: function () {
+        upvote() {
             let voteStatus = this.get('voteStatus') || 0;
 
             if (voteStatus < 0) {
@@ -40,7 +42,7 @@ export default Ember.Component.extend({
             }
         },
 
-        downvote: function () {
+        downvote() {
             let voteStatus = this.get('voteStatus') || 0;
 
             if (voteStatus > 0) {

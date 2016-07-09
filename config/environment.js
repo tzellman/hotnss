@@ -4,10 +4,10 @@ var faker = require('faker');
 module.exports = function (environment) {
     var ENV = {
         modulePrefix: 'hotnss',
-        environment : environment,
-        baseURL     : '/',
+        environment: environment,
+        baseURL: '/',
         locationType: 'auto',
-        EmberENV    : {
+        EmberENV: {
             FEATURES: {
                 // Here you can enable experimental features on an ember canary build
                 // e.g. 'with-controller': true
@@ -30,12 +30,12 @@ module.exports = function (environment) {
 
     if (environment === 'test') {
         // Testem prefers this...
-        ENV.baseURL      = '/';
+        ENV.baseURL = '/';
         ENV.locationType = 'none';
 
         // keep test console output quieter
         ENV.APP.LOG_ACTIVE_GENERATION = false;
-        ENV.APP.LOG_VIEW_LOOKUPS      = false;
+        ENV.APP.LOG_VIEW_LOOKUPS = false;
 
         ENV.APP.rootElement = '#ember-testing';
     }
@@ -69,17 +69,27 @@ module.exports = function (environment) {
         });
 
         fixtures.posts.forEach(function (f, i) {
-            f.created   = faker.date.recent();
-            f.id        = i + 1;
-            f.user      = faker.random.number({min: 1, max: 3});
-            f.upvotes   = faker.random.number(100);
+            f.created = faker.date.recent();
+            f.id = i + 1;
+            f.user = faker.random.number({min: 1, max: 3});
+            f.upvotes = faker.random.number(100);
             f.downvotes = faker.random.number(50);
+            f.icon = faker.image.image(32, 32);
         });
 
         ENV.FIXTURES = fixtures;
     }
 
     ENV.podModulePrefix = ENV.modulePrefix + '/pods';
+
+    ENV.contentSecurityPolicy = {
+        'default-src': "'none'",
+        'script-src': "'self'",
+        'font-src': "'self' http://fonts.gstatic.com http://lorempixel.com",
+        'connect-src': "'self'",
+        'img-src': "'self' data:",
+        'media-src': "'self'"
+    }
 
     return ENV;
 };

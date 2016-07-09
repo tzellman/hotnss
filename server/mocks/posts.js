@@ -16,6 +16,7 @@ FIXTURES.forEach(function (f, i) {
     f.user = faker.random.number({min: 1, max: 3});
     f.upvotes = faker.random.number(100);
     f.downvotes = faker.random.number(50);
+    f.icon = faker.image.image(32, 32);
 });
 
 
