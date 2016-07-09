@@ -9,7 +9,7 @@ FIXTURES.forEach(function (f, i) {
 });
 
 module.exports = function (app) {
-    var express     = require('express');
+    var express = require('express');
     var usersRouter = express.Router();
 
     usersRouter.get('/', function (req, res) {

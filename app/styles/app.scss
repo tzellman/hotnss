@@ -1,37 +1,36 @@
 @import "bootstrap";
 
 @mixin textured-bg-lattice($bg: #413c46, $grad: rgba(255, 255, 255, $alpha), $size: 10px) {
-    background-color : $bg;
-    background-image : linear-gradient(90deg, $grad 70%, transparent 50%),
+    background-color: $bg;
+    background-image: linear-gradient(90deg, $grad 70%, transparent 50%),
     linear-gradient(180deg, $grad 70%, transparent 50%);
-    background-size  : $size;
+    background-size: $size;
 }
 
 html, body {
-    height    : 100%;
-    margin    : 0px;
-    font-size : $font-size-base;
+    height: 100%;
+    margin: 0px;
+    font-size: $font-size-base;
     @include textured-bg-lattice(#bababa, rgba(201, 134, 87, 0.4), 150px);
 }
 
-
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 *, *:before, *:after {
-    box-sizing : border-box;
+    box-sizing: border-box;
 }
 
 a {
-    color           : rgb(29, 125, 199);;
-    text-decoration : none;
-    cursor          : pointer;
+    color: rgb(29, 125, 199);;
+    text-decoration: none;
+    cursor: pointer;
     &.no-link {
-        cursor : default;
+        cursor: default;
     }
 }
 
 .navbar-brand {
-    padding-top : 0;
+    padding-top: 0;
     > img {
-        height : $navbar-height * 0.8;
+        height: $navbar-height * 0.8;
     }
 }

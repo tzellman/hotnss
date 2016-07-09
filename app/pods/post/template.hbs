@@ -8,7 +8,7 @@
             {{/if}}
         </h3>
         <small>posted by {{model.user.username}}</small>
-        <small>{{from-now model.created}}</small>
+        <small>{{moment-from-now model.created interval=60000}}</small>
     </div>
     {{#if model.content}}
         <div class="panel-body">

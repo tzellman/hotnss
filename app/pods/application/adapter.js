@@ -1,5 +1,5 @@
-import DS from 'ember-data';
-import config from '../config/environment';
+import DS from "ember-data";
+import config from "hotnss/config/environment";
 
 var Adapter;
 
@@ -7,7 +7,7 @@ if (config.environment === 'production') {
     Adapter = DS.FixtureAdapter.extend({});
 } else {
     Adapter = DS.RESTAdapter.extend({
-        namespace      : 'api',
+        namespace: 'api',
         shouldReloadAll: () => true
     });
 }

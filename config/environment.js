@@ -79,5 +79,7 @@ module.exports = function (environment) {
         ENV.FIXTURES = fixtures;
     }
 
+    ENV.podModulePrefix = ENV.modulePrefix + '/pods';
+
     return ENV;
 };

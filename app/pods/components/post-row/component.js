@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Ember from "ember";
 
 export default Ember.Component.extend({
 
@@ -11,7 +11,7 @@ export default Ember.Component.extend({
         return this.get('score') > 0;
     }),
 
-    isUpvote  : Ember.computed('voteStatus', function () {
+    isUpvote: Ember.computed('voteStatus', function () {
         return (this.get('voteStatus') || 0) > 0;
     }),
     isDownvote: Ember.computed('voteStatus', function () {
@@ -29,13 +29,13 @@ export default Ember.Component.extend({
                 // revert our downvote, but not upvote
                 this.setProperties({
                     'post.downvotes': this.get('post.downvotes') - 1,
-                    voteStatus      : 0
+                    voteStatus: 0
                 });
             }
             else if (voteStatus === 0) {
                 this.setProperties({
                     'post.upvotes': this.get('post.upvotes') + 1,
-                    voteStatus    : 1
+                    voteStatus: 1
                 });
             }
         },
@@ -47,13 +47,13 @@ export default Ember.Component.extend({
                 // revert our upvote, but not upvote
                 this.setProperties({
                     'post.upvotes': this.get('post.upvotes') - 1,
-                    voteStatus    : 0
+                    voteStatus: 0
                 });
             }
             else if (voteStatus === 0) {
                 this.setProperties({
                     'post.downvotes': this.get('post.downvotes') + 1,
-                    voteStatus      : -1
+                    voteStatus: -1
                 });
             }
         }

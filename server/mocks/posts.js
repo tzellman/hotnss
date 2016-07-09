@@ -11,16 +11,16 @@ var FIXTURES = [
 ];
 
 FIXTURES.forEach(function (f, i) {
-    f.created   = faker.date.recent();
-    f.id        = i + 1;
-    f.user      = faker.random.number({min: 1, max: 3});
-    f.upvotes   = faker.random.number(100);
+    f.created = faker.date.recent();
+    f.id = i + 1;
+    f.user = faker.random.number({min: 1, max: 3});
+    f.upvotes = faker.random.number(100);
     f.downvotes = faker.random.number(50);
 });
 
 
 module.exports = function (app) {
-    var express     = require('express');
+    var express = require('express');
     var postsRouter = express.Router();
 
     postsRouter.get('/', function (req, res) {

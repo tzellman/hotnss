@@ -9,4 +9,4 @@
 </button>
 <span>{{#link-to "post" post.id}}{{post.title}}{{/link-to}}</span>
 <small>{{post.user.username}}</small>
-<small>{{from-now post.created}}</small>
+<small>{{moment-from-now post.created interval=60000}}</small>
